@@ -1,5 +1,72 @@
-$body-color: blue;
+$base: rgb(50, 50, 50);
+$nav-color-active: rgb(46, 179, 152);
+$nav-color: rgb(255, 255, 255);
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/font/Lato.ttf');
+}
 
 body {
-  color: $body-color;
+  font-family: 'Lato', sans-serif;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  padding-top: 9px;
+  font-family: 'Lato', sans-serif;
+  background-color: $base;
+  width: 1020px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .link {
+    flex-basis: 20%;
+    flex-grow: 1;
+    display: flex;
+    z-index: 102;
+
+    a {
+      text-decoration: none;
+      color: $nav-color;
+      font-size: 10px;
+    }
+
+    a.active {
+      color: $nav-color-active;
+    }
+
+    .indent {
+      padding-right: 24px;
+    }
+  }
+
+  .before {
+    justify-content: flex-end;
+  }
+
+  .after {
+    justify-content: flex-start;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    flex-basis: 139px;
+    z-index: 102;
+  }
+}
+
+.pointy-thingy {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 51.5px 90px 0 90px;
+  border-color: $base transparent transparent transparent;
+  position: absolute;
+  top: 38px;
+  z-index: 101;
 }

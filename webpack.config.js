@@ -20,16 +20,15 @@ module.exports = {
     },
     module: {
         rules: [
-            {test: /\.s[ac]ss$/i, use: ["style-loader","css-loader","sass-loader",],},
+            {test: /\.s[ac]ss$/i, use: ["style-loader", "css-loader", "sass-loader",],},
             {test: /\.(svg|ico|jpg|png)$/, type: 'asset/resource'},
             {
                 test: /\.js$/,
                 exclude: '/node_modules',
                 use: {loader: "babel-loader", options: {presets: ['@babel/preset-env']}}
             },
-            {test: /\.(woff|woff2|eot|ttf|otf)$/i, type: 'asset/resource'}
-
-        ]
+            {test: /\.(woff|woff2|eot|ttf|otf)$/i, type: 'asset/resource',},
+        ],
     },
     plugins: [
         new HTMLWebpackPlugin({
@@ -39,4 +38,4 @@ module.exports = {
         )
     ]
 
-}
+};
