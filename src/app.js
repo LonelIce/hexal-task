@@ -1,5 +1,7 @@
 import "./style.scss";
-import logo from './assets/img/Logo.svg'
+import Logo from './assets/img/Logo.svg'
+import Photo from './assets/img/Photo.svg'
+
 
 function addToggleClass(element, newClassName) {
     deleteToggleClass(newClassName);

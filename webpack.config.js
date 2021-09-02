@@ -3,7 +3,8 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: {
-        main: path.resolve(__dirname, 'src/app.js')
+        main: path.resolve(__dirname, 'src/app.js'),
+        portfolio:path.resolve(__dirname, 'src/portfolio.js')
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -21,7 +22,7 @@ module.exports = {
     module: {
         rules: [
             {test: /\.s[ac]ss$/i, use: ["style-loader", "css-loader", "sass-loader",],},
-            {test: /\.(svg|ico|jpg|png)$/, type: 'asset/resource'},
+            {test: /\.(png|svg|jpg|jpeg|gif)$/i,type: 'asset/resource',},
             {
                 test: /\.js$/,
                 exclude: '/node_modules',
