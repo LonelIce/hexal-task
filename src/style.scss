@@ -3,9 +3,19 @@ $background_2: rgb(46, 179, 152);
 $background: rgb(255, 255, 255);
 $text-profile: rgb(215, 252, 245);
 $text-profile-2: rgb(32, 129, 109);
+$text-footer: rgb(224, 224, 224);
+$text-footer-2: rgb(190, 190, 190);
+$input: rgb(69, 69, 69);
 @font-face {
   font-family: 'Lato';
   src: url('./assets/font/Lato.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/font/Lato-Black.ttf');
+  font-weight: bold;
 }
 
 @font-face {
@@ -114,7 +124,7 @@ header {
   display: flex;
   flex-direction: row;
   background-color: $background_2;
-  height: 342px;
+  height: 341px;
   align-items: center;
   justify-content: center;
   width: 1020px;
@@ -151,6 +161,10 @@ header {
       color: $text-profile;
       line-height: 2.1;
       letter-spacing: 0.058px;
+      -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
     }
 
     .messengers {
@@ -163,7 +177,7 @@ header {
       a {
         div {
           height: 24px;
-          width: 24px;
+          width: 24.5px;
           background-color: $text-profile;
 
           svg {
@@ -185,7 +199,7 @@ header {
           }
         }
 
-        &:active {
+        &:active {//один из селекторов плохо работает
           div {
             background-color: darken($text-profile, 30);
           }
@@ -195,6 +209,138 @@ header {
 
     .icon {
       fill: $background_2;
+    }
+  }
+}
+
+.get-in-touch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 1020px;
+  height: 564px;
+  background-color: $base;
+
+  .button {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 700px; // не коректно как-то получается
+  }
+
+  button {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    margin-top: 8px;
+    width: 90px;
+    height: 37px;
+    background-color: $background_2;
+    color: $text-profile;
+    border: 0;
+  }
+
+  .header-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .heading, .subtitle {
+      font-family: "MavenProRegular", sans-serif;
+      width: 780px;
+    }
+
+    .heading {
+      font-size: 30px;
+      color: $text-footer;
+      line-height: 1;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: $text-footer-2;
+      padding-bottom: 10px;
+    }
+  }
+
+  .bot {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .forms {
+      width: 580px;
+
+      form {
+        display: flex;
+        flex-direction: column;
+
+        input, textarea {
+          font-family: 'Lato', sans-serif;
+          font-size: 12px;
+          color: $text-footer-2;
+          background-color: $input;
+          margin-bottom: 8px;
+          border: 0;
+        }
+
+        input, textarea {
+          margin-top: 8px;
+          padding: 16px;
+        }
+
+        input {
+          height: 6px;
+        }
+
+        textarea {
+          height: 118px;
+        }
+      }
+    }
+
+    .info {
+      padding-left: 20px;
+      width: 180px;
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: $text-footer-2;
+      line-height: 1.9;
+      text-align: justify;
+      -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
+      display: flex;
+      flex-direction: column;
+
+      .text, .contacts {
+        flex-basis: 50%;
+      }
+
+      span {
+        .bolder {
+          font-weight: bold;
+          color: $text-footer;
+        }
+      }
+
+      .contacts {
+        div {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          svg {
+            height: 12px;
+            width: 12px;
+            margin-right: 10px;
+
+            .item {
+              fill: $text-profile-2;
+            }
+          }
+        }
+      }
     }
 
   }
