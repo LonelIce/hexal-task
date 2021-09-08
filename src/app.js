@@ -1,12 +1,14 @@
 import "./style.scss";
 import Logo from './assets/img/Logo.svg'
 import Photo from './assets/img/Photo.svg'
+
 let portfolio_img = [];
+
 function importAll(r) {
     r.keys().forEach((s, i, arr) => portfolio_img[i] = r(s));
 }
-importAll(require.context('./assets/img/portfolio/', true, /\.svg$/));
 
+importAll(require.context('./assets/img/portfolio/', true, /\.svg$/));
 
 function addToggleClass(element, newClassName) {
     deleteToggleClass(newClassName);
@@ -24,5 +26,10 @@ for (let i = 0; i < nav_link.length; i++) {
         addToggleClass(nav_link[i], "active");
     });
 }
-
+const switches = document.querySelectorAll(".switch");
+for (let i = 0; i < switches.length; i++) {
+    switches[i].addEventListener("click", () => {
+        addToggleClass(switches[i], "active-switch");
+    });
+}
 

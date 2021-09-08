@@ -7,12 +7,12 @@
 <body>
 <header>
     <div class="link before">
-        <a href="#" class="nav-link indent active">PORTFOLIO</a>
+        <a href="#" class="nav-link indent active"><h1>PORTFOLIO</h1></a>
         <a href="#" class="nav-link">ABOUT</a>
     </div>
-    <div class="pointy-thingy after"></div>
+    <div class="pointy-thingy"></div>
     <div class="logo"><img src="Logo.svg" alt="Logo"></div>
-    <div class="link">
+    <div class="link after">
         <a href="#" class="indent nav-link">BLOG</a>
         <a href="#" class="nav-link">GET IN TOUCH</a>
     </div>
@@ -63,9 +63,19 @@
             <img src="Position13.svg" alt="13">
         </div>
     </div>
+    <div class="slide-switches">
+        <div class="switches">
+            <div class="switch"></div>
+            <div class="switch"></div>
+            <div class="switch active-switch"></div>
+            <div class="switch"></div>
+            <div class="switch"></div>
+            <div class="switch"></div>
+        </div>
+    </div>
 </div>
 <div class="profile">
-    <div class="img">
+    <div class="photo">
         <img src="Photo.svg" alt="Photo">
     </div>
     <div class="text">
@@ -156,20 +166,24 @@
                 <input type="text" placeholder="Email (Required)"/>
                 <input type="text" placeholder="Subject"/>
                 <textarea placeholder="Write your message here..."></textarea>
+                <div class="button">
+                    <button>SEND</button>
+                </div>
             </form>
         </div>
         <div class="info">
-        <span class="text"><span class="bolder">Quisque Hendrerit: </span>purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae
+        <span class="text"><span class="bolder">Quisque Hendrerit: </span>purus dapi&shy;bus, ornare nibh vitae, viverra nibh. Fusce vitae
         aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus morbi vitae.</span>
             <div class="contacts">
-                <div class="map">
+                <a href="https://yandex.by/maps/org/minsk_siti_khostel/81247154045/?ll=27.580467%2C53.912175&mode=search&sll=27.561481%2C53.902496&sspn=0.273285%2C0.154289&text=Elm%20St.%2014%2F05%20Lost%20City&z=16"
+                   class="map">
                     <svg viewBox="0 0 512 512">
                         <path class="item"
                               d="M256,0C153.755,0,70.573,83.182,70.573,185.426c0,126.888,165.939,313.167,173.004,321.035 c6.636,7.391,18.222,7.378,24.846,0c7.065-7.868,173.004-194.147,173.004-321.035C441.425,83.182,358.244,0,256,0z M256,278.719 c-51.442,0-93.292-41.851-93.292-93.293S204.559,92.134,256,92.134s93.291,41.851,93.291,93.293S307.441,278.719,256,278.719z"/>
                     </svg>
                     <span>Elm St. 14/05 Lost City</span>
-                </div>
-                <div class="telephone">
+                </a>
+                <a href="tel:+35283318635 " class="telephone">
                     <svg viewBox="0 0 513.64 513.64">
                         <g transform="matrix(6.123233995736766e-17,-1,1,6.123233995736766e-17,-0.0003681182861328125,513.6402759552002)">
                             <path class="item"
@@ -177,8 +191,8 @@
                         </g>
                     </svg>
                     <span>+ 3528 331 86 35</span>
-                </div>
-                <div class="email">
+                </a>
+                <a href="mailto:info@hexalcorp.com" class="email">
                     <svg viewBox="0 0 477.867 477.867">
                         <path class="item"
                               d="M460.8,68.267H17.067l221.867,182.75L463.309,68.779C462.488,68.539,461.649,68.368,460.8,68.267z"/>
@@ -186,13 +200,13 @@
                               d="M249.702,286.31c-6.288,5.149-15.335,5.149-21.623,0L0,98.406v294.127c0,9.426,7.641,17.067,17.067,17.067H460.8 c9.426,0,17.067-7.641,17.067-17.067V100.932L249.702,286.31z"/>
                     </svg>
                     <span>info@hexalcorp.com</span>
-                </div>
+                </a>
             </div>
         </div>
     </div>
-    <div class="button">
-        <button>SEND</button>
-    </div>
 </div>
+<footer>
+    <span>© Copyright 2013 by PSDchat</span>
+</footer>
 </body>
 </html>
