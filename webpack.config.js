@@ -8,7 +8,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: "[name].[contenthash].js",
-        assetModuleFilename: "[name][ext]",
+        assetModuleFilename: '[path][name][ext]',
         clean: true,
     },
     devtool: 'inline-source-map',
@@ -32,10 +32,9 @@ module.exports = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-                filename: "index.html",// как назовем итог компиляции
-                template: path.resolve(__dirname, 'src/temp.html')// откуда берем наполненость
+                filename: "index.html",
+                template: path.resolve(__dirname, 'src/temp.html')
             }
         )
     ]
-
 };

@@ -1,11 +1,11 @@
 import "./style.scss";
-import Logo from './assets/img/Logo.svg'
-import Photo from './assets/img/Photo.svg'
+import Logo from "./assets/img/Logo.svg";
+import Photo from "./assets/img/Photo.svg";
 
 let portfolio_img = [];
 
-function importAll(r) {
-    r.keys().forEach((s, i, arr) => portfolio_img[i] = r(s));
+function importAll(webpackContext) {
+    webpackContext.keys().forEach((item, i, arr) => portfolio_img[i] = webpackContext(item));
 }
 
 importAll(require.context('./assets/img/portfolio/', true, /\.svg$/));
@@ -32,4 +32,3 @@ for (let i = 0; i < switches.length; i++) {
         addToggleClass(switches[i], "active-switch");
     });
 }
-
