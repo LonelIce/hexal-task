@@ -312,6 +312,14 @@ main {
         background-color: $backgroundAcrylic;
         color: $textProfileWhite;
         border: 0;
+
+        &:hover {
+          background-color: $borderGreen;
+        }
+
+        &:active {
+          background-color: $textProfileGreen;
+        }
       }
     }
 
@@ -319,9 +327,7 @@ main {
       padding-left: 20px;
       padding-top: 2px;
       font-family: 'Lato', sans-serif;
-      font-size: 12px;
       color: $textConnectionGray;
-      line-height: 1.88;
       text-align: justify;
       -webkit-hyphens: auto;
       -moz-hyphens: auto;
@@ -401,10 +407,25 @@ footer {
 
   .forms, .button {
     width: 160px;
+
+    input, textarea {
+      margin-bottom: 5px;
+    }
   }
+
   .info {
     width: 120.825px;
   }
+
+  .get-in-touch {
+    .bot {
+      .info {
+        font-size: 10px;
+        line-height: 1.4;
+      }
+    }
+  }
+
   main .portfolio {
     height: 300px;
 
@@ -420,6 +441,7 @@ footer {
       top: 6px;
     }
   }
+
   .profile {
     .photo {
       width: 100px;
@@ -494,6 +516,13 @@ footer {
 
   .get-in-touch {
     height: 500px;
+
+    .bot {
+      .info {
+        font-size: 10px;
+        line-height: 1.5;
+      }
+    }
   }
 
   .heading, .subtitle {
@@ -571,6 +600,16 @@ footer {
     width: 179px;
   }
 
+  .get-in-touch {
+    .bot {
+      .info {
+        font-size: 11px;
+        line-height: 1.88;
+      }
+    }
+  }
+
+
   main .portfolio {
     height: 600px;
 
@@ -611,6 +650,12 @@ footer {
 
   .get-in-touch {
     height: 538px;
+
+    .bot {
+      .info {
+        font-size: 12px;
+      }
+    }
   }
 
   .heading, .subtitle {
@@ -684,6 +729,12 @@ footer {
     .content {
       .photo {
         padding: 0 20px;
+      }
+
+      .text {
+        .description {
+          margin-bottom: 40px;
+        }
       }
     }
   }
