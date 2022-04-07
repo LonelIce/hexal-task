@@ -45,29 +45,37 @@ header {
   font-family: 'Lato', sans-serif;
   background-color: $backgroundBlack;
   height: 63px;
-  display: flex;
-  justify-content: center;
 
-  .content {
+  .wrapper {
     display: flex;
     justify-content: center;
+    padding: 0 8px;
 
-    .link, h1 {
+    .links {
       flex-basis: 20%;
       flex-grow: 1;
       display: flex;
       z-index: 102;
-      height: 74px;
       align-items: center;
       border-bottom: 1px solid $borderWhite;
 
-      a, a h1 {
+      .indent {
+        margin-right: 12px;
+      }
+
+      h1 {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+      }
+
+      .nav-link {
         text-decoration: none;
         color: $backgroundWhite;
         font-size: 10px;
       }
 
-      a.active, a.active h1 {
+      .active {
         color: $backgroundAcrylic;
       }
     }
@@ -82,6 +90,12 @@ header {
       z-index: 102;
       height: 74px;
       align-items: center;
+      margin: 0 15px;
+
+      .logoImg {
+        height: 55px;
+        width: 64px;
+      }
     }
 
     .pointy-thingy {
@@ -155,7 +169,7 @@ main {
     padding: 20px 0;
     width: 100%;
 
-    .content {
+    .innerProfile {
       display: flex;
       justify-content: center;
 
@@ -187,7 +201,7 @@ main {
           color: $textProfileGreen;
         }
 
-        .description {
+        .desc {
           font-family: 'Lato', sans-serif;
           color: $textProfileWhite;
           text-align: justify;
@@ -383,22 +397,8 @@ footer {
 }
 
 @media (max-device-width: 576px) {
-  header .content, main .portfolio, .profile .content, footer span {
+  main .portfolio, .profile .innerProfile, footer span {
     width: 320px;
-  }
-
-  header {
-    .content {
-      .logo {
-        width: 100px;
-      }
-
-      .link {
-        .indent {
-          padding-right: 5px;
-        }
-      }
-    }
   }
 
   .heading, .subtitle {
@@ -455,7 +455,7 @@ footer {
       font-size: 12px;
       padding-right: 10px;
 
-      .description {
+      .desc {
         padding-bottom: 10px;
       }
 
@@ -478,7 +478,7 @@ footer {
   }
 
   .profile {
-    .content {
+    .wrapper {
       .photo {
         padding: 0 6px;
       }
@@ -488,28 +488,28 @@ footer {
 }
 
 @media (min-device-width: 576px) {
-  header .content, main .portfolio, .profile .content, footer span {
+  main .portfolio, .profile .wrapper, footer span {
     width: 540px;
   }
 
   header {
-    .content {
+    .wrapper {
       .logo {
-        width: 139px;
+        margin: 0 38px;
       }
 
-      .link {
+      .links {
         .indent {
-          padding-right: 24px;
+          margin-right: 24px;
         }
       }
 
       .after {
-        margin-right: 30px;
+        padding-right: 30px;
       }
 
       .before {
-        margin-left: 30px;
+        padding-left: 30px;
       }
     }
   }
@@ -584,7 +584,7 @@ footer {
 }
 
 @media (min-device-width: 768px) {
-  header .content, main .portfolio, .profile .content, footer span {
+  main .portfolio, .profile .wrapper, footer span {
     width: 740px;
   }
 
@@ -644,7 +644,7 @@ footer {
 }
 
 @media (min-device-width: 992px) {
-  header .content, main .portfolio, .profile .content, footer span {
+  main .portfolio, .profile .wrapper, footer span {
     width: 920px;
   }
 
@@ -696,7 +696,7 @@ footer {
   }
 
   .profile {
-    .content {
+    .wrapper {
       .photo {
         padding: 0 10px;
       }
@@ -705,7 +705,7 @@ footer {
 }
 
 @media (min-device-width: 1200px) {
-  header .content, main .portfolio, .profile .content, footer span {
+  main .portfolio, .profile .wrapper, footer span {
     width: 1020px;
   }
 
@@ -726,13 +726,13 @@ footer {
   }
 
   .profile {
-    .content {
+    .wrapper {
       .photo {
         padding: 0 20px;
       }
 
       .text {
-        .description {
+        .desc {
           margin-bottom: 40px;
         }
       }

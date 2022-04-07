@@ -7,14 +7,14 @@
 </head>
 <body>
 <header>
-    <div class="content">
-        <div class="link before">
-            <a href="#" class="nav-link indent active"><h1>PORTFOLIO</h1></a>
+    <div class="wrapper">
+        <div class="links before">
+            <h1><a href="#" class="nav-link indent active">PORTFOLIO</a></h1>
             <a href="#" class="nav-link">ABOUT</a>
         </div>
         <div class="pointy-thingy"></div>
-        <div class="logo"><img src="./src/assets/img/Logo.svg" alt="Logo"></div>
-        <div class="link after">
+        <a href="/" class="logo"><img src="./src/assets/img/Logo.svg" alt="Logo" class="logoImg"></a>
+        <div class="links after">
             <a href="#" class="indent nav-link">BLOG</a>
             <a href="#" class="nav-link">GET IN TOUCH</a>
         </div>
@@ -79,7 +79,7 @@
         </div>
     </div>
     <div class="profile">
-        <div class="content">
+        <div class="innerProfile">
             <div class="photo">
                 <img src="./src/assets/img/Photo.svg" alt="Photo">
             </div>
@@ -90,7 +90,7 @@
                 <div class="profession">
                     Illustrator & Character Designer
                 </div>
-                <div class="description">
+                <div class="desc">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor, nibh at sagittis
                     tristique, enim magna pretium augue, eget consectetur sem dui non urna. Integer gravida, diam congue
                     molestie fringilla, elit odio rhoncus turpis, ac dictum libero elit vel metus. Morbi egestas sit
@@ -151,7 +151,7 @@
     </div>
     <div class="bot">
         <div class="forms">
-            <form>
+            <form action="" method="POST">
                 <input type="text" placeholder="Name (Required)" required/>
                 <input type="text" placeholder="Email (Required)" required/>
                 <input type="text" placeholder="Subject"/>
