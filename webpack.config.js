@@ -1,40 +1,71 @@
-const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
-module.exports = {
-    mode: 'development',
-    entry: {
-        main: path.resolve(__dirname, 'src/app.js')
-    },
+const HtmlWebpackPlugin=require('html-webpack-plugin');
+const MiniCssExtractPlugin=require('mini-css-extract-plugin');
+
+let mode='development'
+if(process.env.NODE_ENV ==='production'){
+    mode='production';
+}
+
+module.exports={
+    mode:mode,
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: "[name].[contenthash].js",
-        assetModuleFilename: '[path][name][ext]',
+        filename: "[name][contenthash].js",//.
+        assetModuleFilename: "assets/[hash][ext][query]",
         clean: true,
     },
-    devtool: 'inline-source-map',
-    devServer: {
-        static: './dist',
-        port: 5001,
-        open: true,
-        hot: true
-    },
+    devtool: 'source-map',
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename:'[name].[contenthash].css'
+        }),
+        new HtmlWebpackPlugin({
+            template: "src/temp.html"
+        })],
     module: {
         rules: [
-            {test: /\.s[ac]ss$/i, use: ["style-loader", "css-loader", "sass-loader",],},
-            {test: /\.(png|svg|jpg|jpeg|gif)$/i, type: 'asset/resource',},
             {
-                test: /\.js$/,
-                exclude: '/node_modules',
-                use: {loader: "babel-loader", options: {presets: ['@babel/preset-env']}}
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource'
             },
-            {test: /\.(woff|woff2|eot|ttf|otf)$/i, type: 'asset/resource',},
+            {
+                test: /\.html$/i,
+                loader: "html-loader",
+            },
+            {
+                test: /\.(sa|sc|c)ss$/,
+                use: [
+                    (mode === 'development') ? "style-loader" : MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            postcssOptions:{
+                                plugins:[
+                                    [
+                                        "postcss-preset-env",
+                                        {},
+                                    ],
+                                ],
+                            },
+                        },
+                    },
+                    "sass-loader",
+                ],
+            },
+            {
+                test:/\.(png|svg|jpg|jpeg|gif)$/i,
+                type:'asset/resource',
+            },
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use:{
+                    loader: "babel-loader",
+                    options: {
+                        presets:['@babel/preset-env']
+                    }
+                }
+            },
         ],
     },
-    plugins: [
-        new HTMLWebpackPlugin({
-                filename: "index.html",
-                template: path.resolve(__dirname, 'src/temp.html')
-            }
-        )
-    ]
-};
+}

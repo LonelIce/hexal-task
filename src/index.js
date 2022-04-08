@@ -1,14 +1,4 @@
-import "./style.scss";
-import Logo from "./assets/img/Logo.svg";
-import Photo from "./assets/img/Photo.svg";
-
-let portfolio_img = [];
-
-function importAll(webpackContext) {
-    webpackContext.keys().forEach((item, i, arr) => portfolio_img[i] = webpackContext(item));
-}
-
-importAll(require.context('./assets/img/portfolio/', true, /\.svg$/));
+import './styles/index.scss';
 
 function addToggleClass(element, newClassName) {
     deleteToggleClass(newClassName);
