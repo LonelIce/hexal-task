@@ -32,7 +32,7 @@ header {
   .wrapper {
     display: flex;
     justify-content: center;
-    padding: 0 8px;
+    padding: 0 16px;
 
     .links {
       flex-basis: 20%;
@@ -100,49 +100,50 @@ main {
   .portfolio {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    margin: 10px 0;
+    padding: 20px 10px;
     position: relative;
-    align-items: center;
 
-    div {
+    .rowImg {
       display: flex;
       justify-content: center;
-      align-items: center;
-    }
 
-    .top, .bottom {
-      position: relative;
-      border-left: 1px solid $borderWhite;
-      border-right: 1px solid $borderWhite;
-      padding: 0 10px;
-    }
-
-    .slide-switches {
-      position: absolute;
-      display: flex;
-      justify-content: flex-start;
-      bottom: 11px;
-      width: 100%;
-
-      .switches {
-        margin: 0 30px;
-        padding-bottom: 11px;
-        border-bottom: 1px solid $borderWhite;
-        flex-grow: 1;
-        justify-content: flex-start;
-
-        .switch {
-          margin-right: 3px;
-          width: 6px;
-          height: 6px;
-          background-color: $switch;
-        }
-
-        .active-switch {
-          background-color: $switchActive;
-        }
+      .portfolioImg {
+        width: 20%;
+        max-width: 200px;
+        height: auto;
       }
     }
+
+    .top {
+      transform: translateY(18%);
+    }
+
+    .bottom {
+      transform: translateY(-18%);
+    }
+
+    .switchesWrapper {
+      display: flex;
+      padding: 12px 0;
+      margin: 0 12px;
+      position: absolute;
+      bottom: 0;
+      width: 90%;
+      border-bottom: 1px solid $borderWhite;
+
+      .switch {
+        width: 6px;
+        height: 6px;
+        background-color: $switch;
+        margin-right: 3px;
+      }
+
+      .active-switch {
+        background-color: $switchActive;
+      }
+    }
+
   }
 
   .profile {
@@ -380,7 +381,7 @@ footer {
 }
 
 @media (max-device-width: 576px) {
-  main .portfolio, .profile .innerProfile, footer span {
+  footer span {
     width: 320px;
   }
 
@@ -406,22 +407,6 @@ footer {
         font-size: 10px;
         line-height: 1.4;
       }
-    }
-  }
-
-  main .portfolio {
-    height: 300px;
-
-    .top, .bottom {
-      height: 31.28px;
-    }
-
-    .top {
-      bottom: 6px;
-    }
-
-    .bottom {
-      top: 6px;
     }
   }
 
@@ -451,10 +436,6 @@ footer {
     }
   }
 
-  main .portfolio .img {
-    margin: 0 4px;
-    width: 54.675px;
-  }
 
   main div img {
     height: 62.5725px;
@@ -471,7 +452,7 @@ footer {
 }
 
 @media (min-device-width: 576px) {
-  main .portfolio, .profile .wrapper, footer span {
+  .profile .wrapper, footer span {
     width: 540px;
   }
 
@@ -520,27 +501,6 @@ footer {
     width: 120.825px;
   }
 
-  main .portfolio {
-    height: 450px;
-
-    .top, .bottom {
-      height: 52.14px;
-    }
-
-    .top {
-      bottom: 6px;
-    }
-
-    .bottom {
-      top: 6px;
-    }
-  }
-
-  main .portfolio .img {
-    margin: 0 4px;
-    width: 91.125px;
-  }
-
   .profile {
     .photo {
       width: 100px;
@@ -565,6 +525,8 @@ footer {
     height: 104.2875px;
   }
 }
+
+/*
 
 @media (min-device-width: 768px) {
   main .portfolio, .profile .wrapper, footer span {
@@ -722,3 +684,4 @@ footer {
     }
   }
 }
+*/
