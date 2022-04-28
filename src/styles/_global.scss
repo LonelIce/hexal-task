@@ -15,6 +15,8 @@ $borderBlack: rgb(43, 43, 43);
 $link: rgb(165, 219, 212);
 $linkActive: rgb(108, 203, 190);
 $contact: rgb(46, 179, 152);
+$linkWhite: rgb(153, 204, 204);
+
 
 body {
   display: flex;
@@ -101,7 +103,7 @@ main {
     display: flex;
     flex-direction: column;
     margin: 10px 0;
-    padding: 20px 10px;
+    padding: 20px 15px;
     position: relative;
 
     .rowImg {
@@ -149,65 +151,68 @@ main {
   .profile {
     display: flex;
     background-color: $backgroundAcrylic;
+    align-items: center;
     justify-content: center;
-    padding: 20px 0;
-    width: 100%;
+    padding: 20px;
+
 
     .innerProfile {
       display: flex;
-      justify-content: center;
-
-      .photo, .text {
-        display: flex;
-      }
+      flex-direction: column;
+      align-items: center;
+      padding: 0 20px;
+      border-left: 1px solid $borderGreen;
+      border-right: 1px solid $borderGreen;
 
       .photo {
-        justify-content: center;
-        align-items: center;
-        border-left: 1px solid $borderGreen;
+        width: 50%;
+        height: auto;
       }
 
       .text {
-        justify-content: center;
+        display: flex;
         flex-direction: column;
-        border-right: 1px solid $borderGreen;
-        max-width: 580px;
+        font-family: "MavenProRegular", sans-serif;
 
         .name {
-          font-size: 28.5px;
-          font-family: "MavenProRegular", sans-serif;
+          font-size: 28px;
           color: $textProfileWhite;
-          word-spacing: 3px;
+          line-height: 100%;
+          text-align: center;
+          margin: 8px 0;
         }
 
         .profession {
-          font-family: "MavenProRegular", sans-serif;
           color: $textProfileGreen;
+          line-height: 100%;
+          text-align: center;
         }
 
         .desc {
           font-family: 'Lato', sans-serif;
           color: $textProfileWhite;
           text-align: justify;
-          -webkit-hyphens: auto;
-          -moz-hyphens: auto;
-          -ms-hyphens: auto;
-          hyphens: auto;
+          margin: 16px 0;
+          font-size: 14px;
         }
 
         .messengers {
           display: flex;
           justify-content: flex-end;
-          padding-bottom: 10px;
+          margin-top: 16px;
 
-          button {
+          .linkMessenger {
             height: 24px;
-            width: 24.5px;
-            border: 0;
+            width: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $linkWhite;
 
-            svg {
-              height: 12px;
+            .linkImg {
+              fill: $backgroundAcrylic;
               width: 12px;
+              height: auto;
             }
 
             &:hover {
@@ -218,143 +223,128 @@ main {
               background-color: $linkActive;
             }
           }
-        }
 
-        .icon {
-          fill: $backgroundAcrylic;
         }
       }
     }
   }
 }
 
-.get-in-touch {
-  width: 100%;
-  padding: 13px 0;
-  display: flex;
-  flex-direction: column;
+.getInTouch {
+  padding: 13px 20px;
   background-color: $backgroundBlack;
 
-  .header-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .innerGetInTouch {
     border-top: 1px solid $borderBlack;
-    padding-top: 50px;
-
-    .heading, .subtitle {
-      font-family: "MavenProRegular", sans-serif;
-    }
-
-    .heading {
-      font-size: 30px;
-      color: $textConnectionWhite;
-      line-height: 1;
-      word-spacing: 1px;
-    }
-
-    .subtitle {
-      font-size: 18px;
-      color: $textConnectionGray;
-    }
-  }
-
-  .bot {
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-    padding-top: 10px;
-    padding-bottom: 43px;
     border-bottom: 1px solid $borderBlack;
+    padding: 50px 0;
 
-    .forms, .button {
-      form {
+    .headerGetInTouch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10px;
+
+      .title, .subtitle {
+        font-family: "MavenProRegular", sans-serif;
+        text-align: center;
+      }
+
+      .title {
+        font-size: 30px;
+        color: $textConnectionWhite;
+        line-height: 100%;
+      }
+
+      .subtitle {
+        font-size: 18px;
+        color: $textConnectionGray;
+      }
+    }
+
+    .footerGetInTouch {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .formWrapper {
+        form {
+          display: flex;
+          flex-direction: column;
+          margin-top: 16px;
+
+          .formItem {
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+            color: $textConnectionGray;
+            background-color: $backgroundInput;
+            border: 0;
+            padding: 17px 13px;
+            margin-bottom: 8px;
+          }
+
+          textarea {
+            height: 130px;
+            resize: none;
+          }
+        }
+
+        .buttonWrapper {
+          display: flex;
+          justify-content: flex-end;
+        }
+
+        .sendBtn {
+          font-size: 12px;
+          padding: 11px 30px;
+          background-color: $backgroundAcrylic;
+          color: $textProfileWhite;
+          border: 0;
+
+          &:hover {
+            background-color: $borderGreen;
+          }
+
+          &:active {
+            background-color: $textProfileGreen;
+          }
+        }
+      }
+
+      .info {
+        font-family: 'Lato', sans-serif;
+        color: $textConnectionGray;
+        text-align: justify;
+        hyphens: auto;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        height: 100%;
+        margin-top: 16px;
+        font-size: 10px;
+        line-height: 140%;
 
-        input, textarea {
-          font-family: 'Lato', sans-serif;
-          font-size: 12px;
-          color: $textConnectionGray;
-          background-color: $backgroundInput;
-          border: 0;
-        }
-
-        input, textarea {
-          padding: 17px 13px;
-        }
-
-        input {
-          height: 5px;
-        }
-
-        textarea {
-          padding: 10px 17px;
-          height: 130px;
-          resize: none;
-        }
-      }
-
-      .button {
-        display: flex;
-        justify-content: flex-end;
-      }
-
-      button {
-        font-family: 'Lato', sans-serif;
-        font-size: 12px;
-        width: 90px;
-        height: 37px;
-        background-color: $backgroundAcrylic;
-        color: $textProfileWhite;
-        border: 0;
-
-        &:hover {
-          background-color: $borderGreen;
-        }
-
-        &:active {
-          background-color: $textProfileGreen;
-        }
-      }
-    }
-
-    .info {
-      padding-left: 20px;
-      padding-top: 2px;
-      font-family: 'Lato', sans-serif;
-      color: $textConnectionGray;
-      text-align: justify;
-      -webkit-hyphens: auto;
-      -moz-hyphens: auto;
-      -ms-hyphens: auto;
-      hyphens: auto;
-
-      span {
         .bolder {
           font-weight: bold;
           color: $textConnectionWhite;
         }
-      }
 
-      .contacts {
-        margin-top: 33px;
-
-        a {
-          text-decoration: none;
+        .contacts {
           display: flex;
           flex-direction: row;
-          align-items: center;
-          color: $textConnectionGray;
+          justify-content: space-between;
+          margin-top: 16px;
+          flex-wrap: wrap;
 
-          svg {
-            height: 12px;
-            width: 12px;
-            margin-right: 10px;
+          a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            color: $textConnectionGray;
+            margin: 8px;
 
-            .item {
+            .contactsIcon {
+              height: 12px;
+              width: 12px;
+              margin-right: 10px;
               fill: $contact;
             }
           }
@@ -366,95 +356,18 @@ main {
 
 footer {
   width: 100%;
-  height: 43px;
-  background-color: $backgroundFooter;
-  font-family: "MavenProRegular", sans-serif;
-  color: $backgroundInput;
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  span {
-    padding-left: 79px;
+  .innerFooter {
+    padding: 14px 20px;
+    background-color: $backgroundFooter;
+    font-family: "MavenProRegular", sans-serif;
+    color: $backgroundInput;
+    font-size: 12px;
+    display: flex;
   }
-}
-
-@media (max-device-width: 576px) {
-  footer span {
-    width: 320px;
-  }
-
-  .heading, .subtitle {
-    width: 287.62px;
-  }
-
-  .forms, .button {
-    width: 160px;
-
-    input, textarea {
-      margin-bottom: 5px;
-    }
-  }
-
-  .info {
-    width: 120.825px;
-  }
-
-  .get-in-touch {
-    .bot {
-      .info {
-        font-size: 10px;
-        line-height: 1.4;
-      }
-    }
-  }
-
-  .profile {
-    .photo {
-      width: 100px;
-
-      img {
-        height: 120px;
-      }
-    }
-
-    .text {
-      font-size: 12px;
-      padding-right: 10px;
-
-      .desc {
-        padding-bottom: 10px;
-      }
-
-      .profession {
-        font-size: 18px;
-        word-spacing: 0.01px;
-        letter-spacing: 0;
-        padding-bottom: 14px;
-      }
-    }
-  }
-
-
-  main div img {
-    height: 62.5725px;
-  }
-
-  .profile {
-    .wrapper {
-      .photo {
-        padding: 0 6px;
-      }
-    }
-  }
-
 }
 
 @media (min-device-width: 576px) {
-  .profile .wrapper, footer span {
-    width: 540px;
-  }
 
   header {
     .wrapper {
@@ -477,57 +390,9 @@ footer {
       }
     }
   }
-
-  .get-in-touch {
-    height: 500px;
-
-    .bot {
-      .info {
-        font-size: 10px;
-        line-height: 1.5;
-      }
-    }
-  }
-
-  .heading, .subtitle {
-    width: 433.81px;
-  }
-
-  .forms, .button {
-    width: 293.625px;
-  }
-
-  .info {
-    width: 120.825px;
-  }
-
-  .profile {
-    .photo {
-      width: 100px;
-    }
-
-    .text {
-      font-size: 12px;
-      line-height: 1.8;
-      padding-bottom: 39px;
-      padding-right: 20px;
-
-      .profession {
-        font-size: 18px;
-        word-spacing: 0.01px;
-        letter-spacing: 0;
-        padding-bottom: 14px;
-      }
-    }
-  }
-
-  main div img {
-    height: 104.2875px;
-  }
 }
 
 /*
-
 @media (min-device-width: 768px) {
   main .portfolio, .profile .wrapper, footer span {
     width: 740px;
