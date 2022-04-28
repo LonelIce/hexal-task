@@ -30,11 +30,23 @@ header {
   font-family: 'Lato', sans-serif;
   background-color: $backgroundBlack;
   height: 63px;
+  display: flex;
+  justify-content: center;
 
-  .wrapper {
+  &:before{
+    content: "";
+    border-style: solid;
+    border-width: 51.5px 90px 0 90px;
+    border-color: $backgroundBlack transparent transparent transparent;
+    position: absolute;
+    top: 38px;
+  }
+
+  .innerHeader {
+    flex-grow: 1;
     display: flex;
     justify-content: center;
-    padding: 0 16px;
+    padding: 0 15px;
 
     .links {
       flex-basis: 20%;
@@ -42,7 +54,15 @@ header {
       display: flex;
       z-index: 102;
       align-items: center;
-      border-bottom: 1px solid $borderWhite;
+      position: relative;
+
+      &:before{
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        border-bottom: 1px solid $borderWhite;
+        width: 100%;
+      }
 
       .indent {
         margin-right: 12px;
@@ -82,14 +102,6 @@ header {
         width: 64px;
       }
     }
-
-    .pointy-thingy {
-      border-style: solid;
-      border-width: 51.5px 90px 0 90px;
-      border-color: $backgroundBlack transparent transparent transparent;
-      position: absolute;
-      top: 38px;
-    }
   }
 }
 
@@ -102,9 +114,10 @@ main {
   .portfolio {
     display: flex;
     flex-direction: column;
-    margin: 10px 0;
-    padding: 20px 15px;
+    margin: 10px 15px;
+    padding: 20px 0;
     position: relative;
+    border-bottom: 1px solid $borderWhite;
 
     .rowImg {
       display: flex;
@@ -128,11 +141,9 @@ main {
     .switchesWrapper {
       display: flex;
       padding: 12px 0;
-      margin: 0 12px;
+      margin: 0 5px;
       position: absolute;
       bottom: 0;
-      width: 90%;
-      border-bottom: 1px solid $borderWhite;
 
       .switch {
         width: 6px;
@@ -166,6 +177,7 @@ main {
 
       .photo {
         width: 50%;
+        max-width: 180px;
         height: auto;
       }
 
@@ -194,6 +206,7 @@ main {
           text-align: justify;
           margin: 16px 0;
           font-size: 14px;
+          flex-grow: 1;
         }
 
         .messengers {
@@ -370,7 +383,7 @@ footer {
 @media (min-device-width: 576px) {
 
   header {
-    .wrapper {
+    .innerHeader {
       .logo {
         margin: 0 38px;
       }
@@ -380,173 +393,46 @@ footer {
           margin-right: 24px;
         }
       }
-
-      .after {
-        padding-right: 30px;
-      }
-
-      .before {
-        padding-left: 30px;
-      }
     }
   }
 }
 
-/*
 @media (min-device-width: 768px) {
-  main .portfolio, .profile .wrapper, footer span {
-    width: 740px;
-  }
-
-  .heading, .subtitle {
-    width: 634px;
-  }
-
-  .forms, .button {
-    width: 435px;
-  }
-
-  .info {
-    width: 179px;
-  }
-
-  .get-in-touch {
-    .bot {
-      .info {
-        font-size: 11px;
-        line-height: 1.88;
-      }
+  header{
+    .innerHeader{
+        padding: 0 30px;
     }
   }
 
-
-  main .portfolio {
-    height: 600px;
-
-    .top, .bottom {
-      height: 77.25px;
+  main{
+    .portfolio{
+      margin: 10px 30px;
     }
 
-    .top {
-      bottom: 25px;
-    }
+    .profile{
+      .innerProfile{
+        flex-direction: row;
 
-    .bottom {
-      top: 25px;
-    }
-  }
+        .photo{
+          margin-right: 20px;
+        }
 
-  .profile {
-    .photo {
-      width: 180px;
-    }
-  }
+        .text{
+          height: 100%;
+          .name{
+            margin-top: 0;
+            text-align: left;
+          }
 
-  main .portfolio .img {
-    margin: 0 5px;
-    width: 135px;
-  }
+          .profession{
+            text-align: left;
+          }
 
-  main div img {
-    height: 154.5px;
-  }
-
-}
-
-@media (min-device-width: 992px) {
-  main .portfolio, .profile .wrapper, footer span {
-    width: 920px;
-  }
-
-  .get-in-touch {
-    height: 538px;
-
-    .bot {
-      .info {
-        font-size: 12px;
-      }
-    }
-  }
-
-  .heading, .subtitle {
-    width: 780px;
-  }
-
-  .forms, .button {
-    width: 580px;
-  }
-
-  .info {
-    width: 179px;
-  }
-
-  main .portfolio {
-    height: 700px;
-
-    .top, .bottom {
-      height: 104px;
-    }
-
-    .top {
-      bottom: 13px;
-    }
-
-    .bottom {
-      top: 13px;
-    }
-  }
-
-  main .portfolio .img {
-    margin: 0 8px;
-    width: 180px;
-  }
-
-  main div img {
-    height: 206px;
-  }
-
-  .profile {
-    .wrapper {
-      .photo {
-        padding: 0 10px;
-      }
-    }
-  }
-}
-
-@media (min-device-width: 1200px) {
-  main .portfolio, .profile .wrapper, footer span {
-    width: 1020px;
-  }
-
-  .info {
-    width: 179px;
-  }
-
-  main .portfolio {
-    height: 721px;
-
-    .top, .bottom {
-      height: 104px;
-    }
-  }
-
-  main .portfolio .img {
-    margin: 0 10px;
-  }
-
-  .profile {
-    .wrapper {
-      .photo {
-        padding: 0 20px;
-      }
-
-      .text {
-        .desc {
-          margin-bottom: 40px;
+          .messengers{
+            margin: 0;
+          }
         }
       }
     }
   }
 }
-*/
