@@ -1,24 +1,4 @@
-$backgroundBlack: rgb(50, 50, 50);
-$backgroundAcrylic: rgb(46, 179, 152);
-$backgroundWhite: rgb(255, 255, 255);
-$textProfileWhite: rgb(215, 252, 245);
-$textProfileGreen: rgb(32, 129, 109);
-$textConnectionWhite: rgb(224, 224, 224);
-$textConnectionGray: rgb(190, 190, 190);
-$backgroundInput: rgb(69, 69, 69);
-$backgroundFooter: rgb(34, 34, 34);
-$borderWhite: rgb(228, 233, 235);
-$switch: rgb(221, 210, 197);
-$switchActive: rgb(139, 135, 132);
-$borderGreen: rgb(33, 157, 132);
-$borderBlack: rgb(43, 43, 43);
-$link: rgb(165, 219, 212);
-$linkActive: rgb(108, 203, 190);
-$contact: rgb(46, 179, 152);
-$linkWhite: rgb(153, 204, 204);
-
-$maxWidthContent1: 1020px;
-$maxWidthContent2: 820px;
+@import "./variables";
 
 
 body {
@@ -99,13 +79,8 @@ header {
       }
     }
 
-    .before {
+    .beforeLogo {
       justify-content: flex-end;
-      margin-left: 30px;
-    }
-
-    .after {
-      margin-right: 30px;
     }
 
     .logo {
@@ -135,7 +110,6 @@ main {
       margin: 10px 0;
       padding: 20px 15px;
       position: relative;
-      border-bottom: 1px solid $borderWhite;
 
       .rowImg {
         display: flex;
@@ -160,7 +134,6 @@ main {
         display: flex;
         padding: 12px 0;
         justify-content: flex-start;
-        margin: 0 30px;
         position: absolute;
         bottom: 0;
 
@@ -175,7 +148,6 @@ main {
           background-color: $switchActive;
         }
       }
-
     }
   }
 
@@ -186,9 +158,18 @@ main {
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 20px;
+      margin: 20px 15px;
       border-left: 1px solid $borderGreen;
       border-right: 1px solid $borderGreen;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        border-bottom: 1px solid $borderWhite;
+        width: 100%;
+        top: -30px;
+      }
 
       .innerProfile {
         display: flex;
@@ -444,13 +425,13 @@ footer {
     .wrapperPortfolio {
       .portfolio {
         padding: 48px 0;
-        margin: 10px 15px;
+        margin: 10px 30px;
       }
     }
 
     .wrapperProfile {
       .profile {
-        margin: 15px 20px;
+        margin: 15px 30px;
         padding: 48px 0;
 
         .innerProfile {
