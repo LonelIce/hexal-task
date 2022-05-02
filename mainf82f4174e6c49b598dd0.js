@@ -1,0 +1,2 @@
+(()=>{"use strict";function t(t,e){var c;c=e,document.querySelector(".".concat(c)).classList.remove(c),t.classList.add(e)}for(var e=document.querySelectorAll(".nav-link"),c=function(c){e[c].addEventListener("click",(function(){t(e[c],"active")}))},n=0;n<e.length;n++)c(n);for(var i=document.querySelectorAll(".switch"),o=function(e){i[e].addEventListener("click",(function(){t(i[e],"active-switch")}))},r=0;r<i.length;r++)o(r)})();
+//# sourceMappingURL=mainf82f4174e6c49b598dd0.js.map
